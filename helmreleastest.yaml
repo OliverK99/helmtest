@@ -1,10 +1,13 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: testrelease
-  namespace: default
+  name: serviceacc
+  namespace: testspace
+  annotations:
+    fluxcd.io/automated: "true"
 spec:
+  releaseName: serviceacc
   chart:
-    repository: git@github.com:OliverK99/helmtest
-    ref: master
+    git: git@github.com:OliverK99/helmtest
     path: charts/chart1
+    ref: master
