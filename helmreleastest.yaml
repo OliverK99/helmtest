@@ -2,9 +2,11 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: testservice
-  namespace: testspace
+  namespace: default
 spec:
   chart:
     repository: git@github.com:OliverK99/helmtest
     ref: master
     path: charts
+  values:
+    namespace: testspace
