@@ -3,10 +3,7 @@ kind: HelmRelease
 metadata:
   name: serviceacc
   namespace: testspace
-  annotations:
-    fluxcd.io/automated: "true"
 spec:
-  releaseName: serviceacc
   chart:
     git: git@github.com:OliverK99/helmtest
     path: charts/chart1
