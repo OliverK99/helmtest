@@ -5,6 +5,6 @@ metadata:
   namespace: testspace
 spec:
   chart:
-    git: git@github.com:OliverK99/helmtest
+    git: https://github.com/OliverK99/helmtest.git
     path: charts/chart1
     ref: master
