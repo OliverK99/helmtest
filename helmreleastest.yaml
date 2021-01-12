@@ -8,5 +8,3 @@ spec:
     repository: git@github.com:OliverK99/helmtest
     ref: master
     path: charts
-  values:
-    namespace: testspace
