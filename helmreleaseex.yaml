@@ -1,8 +1,8 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: podinfo
-  namespace: default
+  name: podinfo-test
+  namespace: testspace
 spec:
   chart:
     repository: https://stefanprodan.github.io/podinfo
