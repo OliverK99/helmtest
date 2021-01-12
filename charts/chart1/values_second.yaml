@@ -1,2 +1,2 @@
 helmServiceAccount:
-  namespace: "testspace"
+  namespace: "testspace2"
