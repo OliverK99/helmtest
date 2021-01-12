@@ -1,7 +1,7 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: serviceacc
+  name: serviceacc2
   namespace: testspace2
 spec:
   chart:
