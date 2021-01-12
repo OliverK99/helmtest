@@ -1,0 +1,10 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: serviceacc
+  namespace: testspace2
+spec:
+  chart:
+    git: https://github.com/OliverK99/helmtest.git
+    path: charts/chart1
+    ref: master
