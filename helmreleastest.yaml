@@ -1,15 +1,9 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: testService
-  namespace: testspace
+  name: testservice
+  namespace: default
 spec:
-  releaseName: test
-  targetNamespace: testspace
-  timeout: 300
-  resetValues: false
-  wait: false
-  forceUpgrade: false
   chart:
     repository: git@github.com:OliverK99/helmtest
     ref: master
