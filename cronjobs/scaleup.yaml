@@ -9,10 +9,10 @@ spec:
     spec:
       template:
         spec:
+          serviceAccountName: admin-user
           containers:
           - name: scaleupjob
-            image: busybox
-            imagePullPolicy: IfNotPresent
+            image: bitnami/kubectl:latest
             args:
-              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{\"spec\":{\"minReplicas\":5}}'
+              - "kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{\"spec\":{\"minReplicas\":5}}'"
           restartPolicy: OnFailure
