@@ -11,8 +11,6 @@ spec:
         spec:
           containers:
           - name: scaleupjob
-            image: scaleupimg
-            imagePullPolicy: IfNotPresent
             args:
               - "kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{\"spec\":{\"minReplicas\":5}}'"
           restartPolicy: OnFailure
