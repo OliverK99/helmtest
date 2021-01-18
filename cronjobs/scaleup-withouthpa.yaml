@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: scaleupjob-withouthpa
+spec:
+  schedule: "10 12 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: scale-user
+          containers:
+          - name: scaleupjob-withouthpa
+            image: bitnami/kubectl:latest
+            command:
+              - /bin/sh
+              - -c
+              - kubectl scale --replicas=3 deployment default-podinfo --namespace=default 
+          restartPolicy: OnFailure
