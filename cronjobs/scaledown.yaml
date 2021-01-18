@@ -4,7 +4,7 @@ metadata:
   name: scaledownjob
   namespace: testspace
 spec:
-  schedule: "14 12 * * *"
+  schedule: "14 15 * * *"
   jobTemplate:
     spec:
       template:
