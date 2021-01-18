@@ -1,17 +1,17 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: service-scale-up-job
+  name: hello2
   namespace: testspace
 spec:
-  schedule: "0 * * * *"
-jobTemplate:
+  schedule: "*/1 * * * *"
+  jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: hello
-            image: busybox
+          - name: hello2
+            image: busybox2
             imagePullPolicy: IfNotPresent
             args:
             - /bin/sh
