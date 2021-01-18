@@ -5,12 +5,16 @@ metadata:
   namespace: testspace
 spec:
   schedule: "0 * * * *"
-  jobTemplate:
+jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: testscaleup
-            image: scaleup
+          - name: hello
+            image: busybox
+            imagePullPolicy: IfNotPresent
             args:
-              - "kubectl patch hpa testspace-podinfo-test --patch '{\"spec\":{\"minReplicas\":5}}'"
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
