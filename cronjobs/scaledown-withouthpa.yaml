@@ -8,7 +8,7 @@ spec:
     spec:
       template:
         spec:
-          serviceAccountName: scale-user
+          serviceAccountName: admin-user
           containers:
           - name: scaledownjob-withouthpa
             image: bitnami/kubectl:latest
