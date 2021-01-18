@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: hello2
+  name: scaleupjob
   namespace: testspace
 spec:
   schedule: "*/1 * * * *"
@@ -10,11 +10,9 @@ spec:
       template:
         spec:
           containers:
-          - name: hello2
-            image: busybox2
+          - name: scaleupjob
+            image: scaleupimg
             imagePullPolicy: IfNotPresent
             args:
-            - /bin/sh
-            - -c
-            - date; echo Hello from the Kubernetes cluster
+              - "kubectl patch hpa testspace-podinfo-test --patch '{\"spec\":{\"minReplicas\":5}}'"
           restartPolicy: OnFailure
