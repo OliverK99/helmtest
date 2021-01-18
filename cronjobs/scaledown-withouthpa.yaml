@@ -15,5 +15,5 @@ spec:
             command:
               - /bin/sh
               - -c
-              - kubectl scale --replicas=1 deployment default-podinfo --namespace=default
+              - kubectl scale --replicas=1 deployment default-podinfo-test --namespace=default
           restartPolicy: OnFailure
