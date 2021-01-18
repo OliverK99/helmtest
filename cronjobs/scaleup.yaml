@@ -13,6 +13,6 @@ spec:
           containers:
           - name: scaleupjob
             image: bitnami/kubectl:latest
-            args:
-              - "kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{\"spec\":{\"minReplicas\":5}}'"
+            command:
+              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{\"spec\":{\"minReplicas\":5}}'
           restartPolicy: OnFailure
