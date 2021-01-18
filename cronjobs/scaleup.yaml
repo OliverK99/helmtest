@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: service-scale-up-job
+  namespace: testspace
+spec:
+  schedule: "* 11 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: service-scheduled-job
+            image: service-scheduled-job:latest
+            args:
+              - "kubectl patch hpa testspace-podinfo-test --patch '{\"spec\":{\"minReplicas\":5}}'"
