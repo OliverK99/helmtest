@@ -1,20 +1,20 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: scaleupjob
+  name: scaledownjob
   namespace: testspace
 spec:
-  schedule: "10 12 * * *"
+  schedule: "14 12 * * *"
   jobTemplate:
     spec:
       template:
         spec:
           serviceAccountName: scale-user
           containers:
-          - name: scaleupjob
+          - name: scaledownjob
             image: bitnami/kubectl:latest
             command:
               - /bin/sh
               - -c
-              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{"spec":{"minReplicas":5}}'
+              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{"spec":{"minReplicas":1}}'
           restartPolicy: OnFailure
