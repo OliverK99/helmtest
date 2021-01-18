@@ -4,14 +4,14 @@ metadata:
   name: scaledownjob
   namespace: testspace
 spec:
-  schedule: "14 15 * * *"
+  schedule: "14 15 * * *" # timezone: UTC -> -1h
   jobTemplate:
     spec:
       template:
         spec:
           serviceAccountName: scale-user
           containers:
-          - name: scaledownjob
+          - name: scaledownjob #use name for container
             image: bitnami/kubectl:latest
             command:
               - /bin/sh
