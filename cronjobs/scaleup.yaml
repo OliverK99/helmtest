@@ -14,5 +14,5 @@ spec:
             image: busybox
             imagePullPolicy: IfNotPresent
             args:
-              - "kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{\"spec\":{\"minReplicas\":5}}'"
+              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{\"spec\":{\"minReplicas\":5}}'
           restartPolicy: OnFailure
