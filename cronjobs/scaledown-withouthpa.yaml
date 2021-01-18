@@ -2,7 +2,6 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: scaledownjob-withouthpa
-  namespace: testspace
 spec:
   schedule: "14 12 * * *"
   jobTemplate:
