@@ -4,13 +4,13 @@ metadata:
   name: service-scale-up-job
   namespace: testspace
 spec:
-  schedule: "* 11 * * *"
+  schedule: "0 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: service-scheduled-job
-            image: service-scheduled-job:latest
+          - name: testscaleup
+            image: scaleup
             args:
               - "kubectl patch hpa testspace-podinfo-test --patch '{\"spec\":{\"minReplicas\":5}}'"
