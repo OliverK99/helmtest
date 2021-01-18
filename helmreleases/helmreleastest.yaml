@@ -8,3 +8,6 @@ spec:
     git: https://github.com/OliverK99/helmtest.git
     path: charts/chart1
     ref: master
+  valuesFrom:
+  - chartFileRef:
+      path: values-dev.yaml
