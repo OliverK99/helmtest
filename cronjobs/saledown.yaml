@@ -4,7 +4,7 @@ metadata:
   name: scaleupjob
   namespace: testspace
 spec:
-  schedule: "59 12 * * *"
+  schedule: "50 12 * * *"
   jobTemplate:
     spec:
       template:
@@ -16,5 +16,5 @@ spec:
             command:
               - /bin/sh
               - -c
-              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{"spec":{"minReplicas":5}}'
+              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{"spec":{"minReplicas":1}}'
           restartPolicy: OnFailure
