@@ -16,5 +16,5 @@ spec:
             command:
               - /bin/sh
               - -c
-              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{"spec":{"minReplicas":1}}'
+              - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{"spec":{"minReplicas":1}}' 
           restartPolicy: OnFailure
