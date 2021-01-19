@@ -1,0 +1,5 @@
+helmServiceAccount:
+  name: "admin-prod"
+helmServiceRole:
+  name: "admin-rolebinding-prod"
+  

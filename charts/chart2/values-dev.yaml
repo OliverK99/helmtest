@@ -1,0 +1,4 @@
+helmServiceAccount:
+  name: "admin-dev"
+helmServiceRole:
+  name: "admin-rolebinding-dev"

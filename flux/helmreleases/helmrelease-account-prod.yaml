@@ -1,0 +1,13 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: serviceaccount-prod
+  namespace: prod
+spec:
+  chart:
+    git: https://github.com/OliverK99/helmtest.git
+    path: charts/chart2
+    ref: master
+  valuesFrom:
+  - chartFileRef:
+      path: values-prod.yaml
