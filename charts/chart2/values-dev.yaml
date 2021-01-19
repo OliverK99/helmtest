@@ -1,3 +1,4 @@
+namespace: "dev"
 helmServiceAccount:
   name: "admin-dev"
 helmServiceRole:
