@@ -17,4 +17,11 @@ spec:
               - /bin/sh
               - -c
               - kubectl patch hpa testspace-podinfo-test --namespace=testspace --patch '{"spec":{"minReplicas":5}}'
+            resources:
+              requests:
+                cpu: "100m"
+                memory: "200Mi"
+              limits:
+                cpu: "100m"
+                memory: "200Mi" 
           restartPolicy: OnFailure
