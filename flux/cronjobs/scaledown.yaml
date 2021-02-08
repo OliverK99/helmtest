@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: scaledownjob
+  name: scaledownjob1
   namespace: testspace
 spec:
   schedule: "14 15 * * *" # timezone: UTC -> -1h
