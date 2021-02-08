@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: scaleupjob1
+  name: scaleupjob
   namespace: testspace
 spec:
   schedule: "10 15 * * *"
